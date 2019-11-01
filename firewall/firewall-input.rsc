@@ -7,7 +7,7 @@ add action=accept chain=input comment="Allow Broadcast" dst-address-type=broadca
 # add action=accept chain=input comment="Allow local CAPsMAN" dst-address=127.0.0.1 dst-port=5246,5247 protocol=udp src-address=127.0.0.1
 
 # INPUT - LAN Services
-add action=jump chain=input comment="Jump to IN-LAN" rules" in-interface=!SFP1_VLAN101 jump-target=IN-LAN
+add action=jump chain=input comment="Jump to IN-LAN rules" in-interface=BRI001 jump-target=IN-LAN
 add action=accept chain=IN-LAN comment="Allow DNS - TCP" dst-port=53 protocol=udp
 add action=accept chain=IN-LAN comment="Allow DNS - UDP" dst-port=53 protocol=tcp
 add action=accept chain=IN-LAN comment="Allow DHCP" dst-port=67 protocol=udp
